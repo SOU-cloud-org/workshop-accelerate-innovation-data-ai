@@ -1,0 +1,13 @@
+﻿ProductID,Product,Category,Brand
+1,Industrial Sensor,Automation,SOU Tech
+2,Smart Gateway,Connectivity,SOU Tech
+3,Control Module,Automation,Nexa
+4,Tracking Device,IoT,Nexa
+5,Safety Scanner,Safety,VisionX
+6,Edge Controller,Computing,VisionX
+7,Telemetry Kit,IoT,Orbit
+8,Power Monitor,Energy,Orbit
+9,Network Switch,Connectivity,LinkPro
+10,Industrial Tablet,Computing,LinkPro
+11,Access Terminal,Safety,SecureOne
+12,Energy Meter,Energy,SecureOne
