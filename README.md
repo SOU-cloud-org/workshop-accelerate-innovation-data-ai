@@ -2,8 +2,38 @@
 
 Guia passo a passo do lab prático.
 
-```
-CSV  →  Lakehouse  →  Semantic Model  →  Reports + Ontology + Data Agent
+```mermaid
+flowchart LR
+    subgraph SRC["Fonte"]
+        CSV["5 arquivos CSV<br/>FactDeliveries · DimDate<br/>DimProduct · DimDistributionCenter · DimCarrier"]
+    end
+
+    subgraph LH["Lakehouse — LH_Logistics"]
+        TB["Tabelas estruturadas<br/>1 fato + 4 dimensões"]
+    end
+
+    subgraph SM["Modelo semântico"]
+        MOD["Esquema estrela<br/>4 relacionamentos 1:*<br/>10 medidas DAX<br/>Descrições + Prepare Data for AI"]
+    end
+
+    subgraph CONS["Consumo"]
+        OPS["Operations Dashboard"]
+        EXEC["Executive Dashboard"]
+        ONT["Ontology<br/>entidades · sinônimos · relacionamentos"]
+        AGENT["Fabric Data Agent<br/>Logistics Operations Analyst"]
+    end
+
+    USER["Usuário de negócio<br/>perguntas em linguagem natural"]
+
+    CSV --> TB --> MOD
+    MOD --> OPS
+    MOD --> EXEC
+    MOD --> ONT
+    MOD --> AGENT
+    ONT --> AGENT
+    AGENT --> USER
+    OPS --> USER
+    EXEC --> USER
 ```
 
 Um único modelo semântico alimentando Analytics e IA.
